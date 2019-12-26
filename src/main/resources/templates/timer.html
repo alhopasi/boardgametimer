@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Timer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Player</th>
+        <th scope="col">Timer</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="i : ${#numbers.sequence(1, timer.getPlayers())}" th:value="${i}">
+        <td scope="row" class="col-sm-1"><span th:id="@{'id' + ${i}}">namePlaceholder</span></td>
+        <td class="col-sm-8"><span th:id="@{'time' + ${i}}">timePlaceholder</span></td>
+        <td class="col-sm-3"><button class="btn btn-success" th:id="@{'button' + ${i}}" th:onclick="@{'startTimer(' + ${(i - 1)} + ')'}">Start!</button> </td>
+    </tr>
+    </tbody>
+</table>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script th:src="@{/js/boardgametimer.js}" th:inline="javascript"></script>
+<script>
+    $(document).ready( function () {
+    /*<![CDATA[*/
+
+    var startTime = [[${timer.getStartTime()}]];
+    var players = [[${timer.getPlayers()}]];
+    initTimer(startTime, players);
+    loadTimes();
+    /*]]>*/
+});
+</script>
+</body>
+</html>
