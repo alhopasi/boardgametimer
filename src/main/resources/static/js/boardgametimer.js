@@ -67,10 +67,10 @@ function startTimer(timer) {
         reduceTime(timer);
 
         res = printTime(timer);
-        document.getElementById("time" + (timer+1).toString()).innerHTML = res;
+        document.getElementById("time" + (timer+1).toString()).innerHTML = "<h2>" + res + "</h2>";
 
         runningButton = timer;
-        document.getElementById("button" + (runningButton+1).toString()).innerHTML = "Stop!";
+        document.getElementById("button" + (runningButton+1).toString()).innerHTML = "<h2>Stop!</h2>";
         document.getElementById("button" + (runningButton+1).toString()).className = "btn btn-danger"
 
     }, 100);
@@ -81,16 +81,15 @@ function stopTimer() {
     if (runningButton == null) {
         return
     }
-    document.getElementById("button" + (runningButton+1).toString()).innerHTML = "Start!";
+    document.getElementById("button" + (runningButton+1).toString()).innerHTML = "<h2>Start!</h2>";
     document.getElementById("button" + (runningButton+1).toString()).className = "btn btn-success"
 }
 
 function loadTimes() {
     for (i = 0; i < timers.length; i++) {
         id = i +1;
-        res = id;
-        document.getElementById("id" + id.toString()).innerHTML = res.toString();
+        document.getElementById("id" + id.toString()).innerHTML = "<h2>" + id.toString() + "</h2>";
         res = printTime(i);
-        document.getElementById("time" + id.toString()).innerHTML = res;
+        document.getElementById("time" + id.toString()).innerHTML = "<h2>" + res + "</h2>";
     }
 }
