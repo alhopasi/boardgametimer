@@ -6,15 +6,29 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
 <body>
-    <div>It's Board Game Time!</div>
-    <form th:action="@{/}" method="POST">
-        <input type="text" name="startTime" id="startTime" class="form-control" placeholder="Start time"/>
+<form th:action="@{/}" method="POST">
+    <div class="row justify-content-md-center">
+        <div class="col-lg-4 col-sm-6 col-xs-6">
+            <div class="row">
+                <h1>It's Board Game Time!</h1>
+            </div>
+            <div class="row">
+                <label class="sr-only" for="startTime">Time for each player in minutes</label>
+                <input type="text" name="startTime" id="startTime" class="form-control mb-2 mr-sm-2" placeholder="Time / player (minutes)"/>
+            </div>
+            <div class="row">
+                <label class="sr-only" for="players">Number of players</label>
+                <input type="text" name="players" id="players" class="form-control mb-2 mr-sm-2" placeholder="Number of players"/>
+            </div>
+            <div class="row">
+                <input type="submit" name="submit" id="submit" value="Ok" class="btn btn-primary mb-2 mr-sm-2 w-100"/>
+            </div>
+        </div>
+    </div>
 
-        <input type="text" name="players" id ="players" class="form-control" placeholder="Players"/>
-        <input type="submit" name="submit" id="submit" value="Ok" class="btn btn-primary" />
-    </form>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</form>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 </body>
 </html>
